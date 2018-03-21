@@ -10,11 +10,16 @@ module.exports = app => {
     );
 
     //passport passes auth token to google strategy, authenticates and passes user info
-    app.get('/auth/google/callback', passport.authenticate('google'));
+    app.get('/auth/google/callback', 
+        passport.authenticate('google'),
+        (req,res) => {
+            res.redirect('/surveys');
+        }
+    );
 
     app.get('/api/logout', (req, res) => {
         req.logout();
-        res.send(req.user);
+        res.redirect('/')
     });
 
     app.get('/api/currentUser', (req, res) => {
