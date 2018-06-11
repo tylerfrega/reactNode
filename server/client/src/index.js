@@ -13,6 +13,10 @@ import reducers from './reducers';
 
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
+store.subscribe(() => {
+    console.log(store.getState(), 'store changed')
+})
+
 ReactDOM.render(
 
     <Provider store={store}><App /></Provider>,

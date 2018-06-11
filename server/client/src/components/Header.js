@@ -19,12 +19,12 @@ class Header extends Component {
       <nav>
         <div className="nav-wrapper">
           <Link 
-          to={this.props.auth ? '/surveys' : "/"} 
+          to={this.props.auth ? '/landing' : "/"} 
           className="left brand-logo"
           >
-          Tits 
+          Redux Todos 
           </Link>
-          <ul id="nav-mobile" className="right hide-on-med-and-down">
+          <ul id="nav-mobile" className="right">
             {this.renderContent()}
           </ul>
         </div>
