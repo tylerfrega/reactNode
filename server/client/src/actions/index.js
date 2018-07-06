@@ -5,7 +5,7 @@ import { GET_TODOS } from './types';
 
 export const fetchUser = () => async dispatch => {
     const res = await axios.get('/api/currentUser');
-    console.log('res', res);
+    console.log('res', res.data);
     dispatch({ type: FETCH_USER, payload: res.data });
 };
 

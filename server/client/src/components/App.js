@@ -20,7 +20,7 @@ class App extends Component {
                     <Header />
                     <Route exact path="/" component={Landing} />
                     <Route exact path="/landing" component={Landing} />
-                    <Route exact path="/todoList" component={TodoList} />
+                    <Route exact path="/todoList" component={TodoList} getTodos = {this.props.getTodos()}/>
                 </div>
             </BrowserRouter>
         </div>
