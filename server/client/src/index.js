@@ -18,7 +18,7 @@ const store = createStore(reducers, {}, composeWithDevTools(
 ));
 
 store.subscribe(() => {
-    console.log(store.getState(), 'store changed')
+    console.log('store changed')
 })
 
 ReactDOM.render(

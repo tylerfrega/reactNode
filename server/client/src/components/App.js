@@ -8,6 +8,9 @@ import Landing from './Landing';
 
 
 class App extends Component {
+    constructor(props){
+        super(props);
+    }
     componentDidMount(){
         this.props.fetchUser();
     }
@@ -20,7 +23,7 @@ class App extends Component {
                     <Header />
                     <Route exact path="/" component={Landing} />
                     <Route exact path="/landing" component={Landing} />
-                    <Route exact path="/todoList" component={TodoList} getTodos = {this.props.getTodos()}/>
+                    <Route exact path="/todoList" component={TodoList} store={this.props.store} getTodos={this.props.getTodos()}/>
                 </div>
             </BrowserRouter>
         </div>

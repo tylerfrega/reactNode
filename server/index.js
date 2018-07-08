@@ -21,6 +21,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require('./routes/authRoutes')(app);
+require('./routes/todoRoutes')(app);
 
 mongoose.connect(keys.mongoURI);
 
